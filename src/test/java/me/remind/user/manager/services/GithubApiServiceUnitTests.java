@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -47,7 +49,7 @@ public class GithubApiServiceUnitTests {
         when(restTemplate.exchange(
                 ArgumentMatchers.anyString(),
                 ArgumentMatchers.any(HttpMethod.class),
-                ArgumentMatchers.isNull(),
+                ArgumentMatchers.<HttpEntity<?>> any(),
                 ArgumentMatchers.<ParameterizedTypeReference<List<UserRepositoryResponse>>>any()
         )).thenReturn(new ResponseEntity<>(Collections.singletonList(response), HttpStatus.OK));
 
@@ -69,7 +71,7 @@ public class GithubApiServiceUnitTests {
         when(restTemplate.exchange(
                 ArgumentMatchers.anyString(),
                 ArgumentMatchers.any(HttpMethod.class),
-                ArgumentMatchers.isNull(),
+                ArgumentMatchers.<HttpEntity<?>> any(),
                 ArgumentMatchers.<ParameterizedTypeReference<List<UserRepositoryResponse>>>any()
         )).thenReturn(new ResponseEntity<>(Collections.singletonList(response), HttpStatus.NOT_FOUND));
 

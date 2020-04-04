@@ -27,7 +27,7 @@ public class GithubConfig {
 
     public static class GithubApiConfig {
         private String url;
-        private String apiKey;
+        private String apiToken;
 
         public String getUrl() {
             return url;
@@ -37,12 +37,12 @@ public class GithubConfig {
             this.url = url;
         }
 
-        public String getApiKey() {
-            return apiKey;
+        public String getApiToken() {
+            return apiToken;
         }
 
-        public void setApiKey(String apiKey) {
-            this.apiKey = apiKey;
+        public void setApiToken(String apiToken) {
+            this.apiToken = apiToken;
         }
     }
 }

@@ -17,4 +17,4 @@ github:
   public-url: https://github.com
   api:
     url: https://api.github.com
-    api-key:
+    api-token: fcc1bd338512e6e641a73fbbc543dc733a3b55b9
