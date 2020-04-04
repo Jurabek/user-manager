@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  user-management-api:
+    image: remindme/user-management
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
